@@ -1,0 +1,5 @@
+
+# don't commit output files
+.step
+.stp
+.dxf
