@@ -1,5 +1,5 @@
 
 # don't commit output files
-.step
-.stp
-.dxf
+*.step
+*.stp
+*.dxf
