@@ -1,3 +1,4 @@
+*.pyc
 
 # don't commit output files
 *.step
