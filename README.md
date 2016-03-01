@@ -1,3 +1,2 @@
 # heatedXYZ
-Design for a heated XYZ stage  
-This design takes inspiration from https://github.com/lautr3k/RepRap-iTopie
+Design for a three-axis tool positioner with a heated stage (where the tool could be a spray nozzle), takes inspiration from https://github.com/lautr3k/RepRap-iTopie
