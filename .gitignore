@@ -6,4 +6,5 @@
 *.dxf
 *.bak
 
-!/dxf/*
+!/dxf/*.dxf
+!/doc/*
