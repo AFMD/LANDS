@@ -3,7 +3,7 @@ the big stepper motor eval kit from TI
 - DRV8711 has 3.3v logic
 
 Buspirate settings for sinffing:
-m-5-2-1-1-1-1-1-(2)
+`m-5-2-1-1-1-1-1-(2)`
 
 The bus pirate trace for a "proper setup" (matching my scereen grabs) is:
 ```
@@ -29,4 +29,14 @@ or with no breaks:
 `0x0F11117B2032310045105A026000`
 
 Buspirate settings for writing:
-m-5-2-1-1-1-1-2
+`m-5-2-1-1-1-1-2-W`
+Then we can program the part:
+```
+[0x0F 0x11]
+[0x11 0x7B]
+[0x20 0x32]
+[0x31 0x00]
+[0x45 0x10]
+[0x5A 0x02]
+[0x60 0x00]
+```
