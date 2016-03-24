@@ -2,8 +2,7 @@
 the big stepper motor eval kit from TI  
 - DRV8711 has 3.3v logic
 
-For sniffing with bus pirate:
-inputs:
+Buspirate settings for sinffing:
 m-5-2-1-1-1-1-1-(2)
 
 The bus pirate trace for a "proper setup" (matching my scereen grabs) is:
@@ -28,3 +27,6 @@ Which is really:
 ```
 or with no breaks: 
 `0x0F11117B2032310045105A026000`
+
+Buspirate settings for writing:
+m-5-2-1-1-1-1-2
