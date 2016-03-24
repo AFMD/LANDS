@@ -1,8 +1,8 @@
-#DRV8711EVM
+# DRV8711EVM
 the big stepper motor eval kit from TI  
 - DRV8711 has 3.3v logic
 
-Buspirate settings for sinffing:
+### Buspirate settings for sinffing:
 `m-5-2-1-1-1-1-1-(2)`
 
 The bus pirate SPI bus sniffed trace for a "proper setup" using the TI provided EVM gui tool (matching my scereen grabs) is:  
@@ -21,10 +21,30 @@ So just the sends were:
 or with no breaks: 
 `0x0F11117B2032310045105A026000`
 
-Then the trace for the read out using the official gui of these settings is:  
+Then the trace for the readout of all the registers using the official gui after applying the "proper setup" is:  
 `[0x80(0x8F)][0x00(0x11)][0x90(0x81)][0x00(0x7B)][0xA0(0x80)][0x00(0x32)][0xB0(0x81)][0x00(0x00)][0xC0(0x85)][0x00(0x10)][0xD0(0x8A)][0x00(0x02)][0xE0(0x80)][0x00(0x00)`  
+So from that, the readback requests were:
+```
+[0x80 0x00]
+[0x90 0x00]
+[0xA0 0x00]
+[0xB0 0x00]
+[0xC0 0x00]
+[0xD0 0x00]
+[0xE0 0x00]
+```
+and the readback responses were:
+```
+[0x8F 0x11]
+[0x81 0x7B]
+[0x80 0x32]
+[0x81 0x00]
+[0x85 0x10]
+[0x8A 0x02]
+[0x80 0x00]
+```
 
-Buspirate settings for writing:  
+### Buspirate settings for writing:  
 `m-5-2-1-1-1-1-1-W-e-2-P`
 Then we can program the part:
 ```
