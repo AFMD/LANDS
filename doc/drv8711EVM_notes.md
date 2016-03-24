@@ -85,3 +85,5 @@ WRITE: 0xE0 READ: 0x80
 WRITE: 0x00 READ: 0x00 
 CS DISABLED
 ```
+To read the status register send:`{0b11110000 0b00000000]`
+To reset all faults send: `[0b01110000 0b00000000]`
