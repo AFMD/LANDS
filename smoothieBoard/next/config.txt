@@ -74,15 +74,15 @@ kill_button_pin                              2.12             # kill button pin.
 currentcontrol_module_enable                 true             #
 
 ## Extruder module configuration
-extruder.hotend.enable                          false            # Whether to activate the extruder module at all. All configuration is ignored if false
+extruder.hotend.enable                          true             # Whether to activate the extruder module at all. All configuration is ignored if false
 extruder.hotend.steps_per_mm                    140              # Steps per mm for extruder stepper
 extruder.hotend.default_feed_rate               600              # Default rate ( mm/minute ) for moves where only the extruder moves
 extruder.hotend.acceleration                    500              # Acceleration for the stepper motor mm/sec²
 extruder.hotend.max_speed                       50               # mm/s
 
 extruder.hotend.step_pin                        2.8              # Pin for extruder step signal
-extruder.hotend.dir_pin                         0.13             # Pin for extruder dir signal
-extruder.hotend.en_pin                          4.29             # Pin for extruder enable signal
+extruder.hotend.dir_pin                         2.13             # Pin for extruder dir signal
+extruder.hotend.en_pin                          4.29!            # Pin for extruder enable signal
 
 # extruder offset
 #extruder.hotend.x_offset                        0                # x offset from origin in mm
@@ -97,7 +97,7 @@ extruder.hotend.en_pin                          4.29             # Pin for extru
 #extruder.hotend.retract_zlift_length            0               # zlift on retract in mm, 0 disables
 #extruder.hotend.retract_zlift_feedrate          6000            # zlift feedrate in mm/min (Note mm/min NOT mm/sec)
 
-delta_current                                2.0              # First extruder stepper motor current
+#delta_current                                2.0              # First extruder stepper motor current
 
 # pin mapping between DRV8711 and smoothie:
 #STP pin    = 2.8
@@ -109,13 +109,14 @@ delta_current                                2.0              # First extruder s
 #SCS pin    = 1.30
 motor_driver_control.syringe.enable               true           #
 motor_driver_control.syringe.chip                 DRV8711        #
-motor_driver_control.syringe.spi_channel          0              # the non-SDcard channel (shared with the thermocouple reader)
 motor_driver_control.syringe.designator           S              #
 motor_driver_control.syringe.sense_resistor       33             # in mOhm
 motor_driver_control.syringe.microsteps           16             #
 motor_driver_control.syringe.current              3000           # in mA
-motor_driver_control.syringe.chip_select_pin      1.30           #
-motor_driver_control.syringe.reg                  0F11,017B,0032,0100,0510,0A02,0000    # this uses 1/4 stepping, TODO: change to 1/16
+motor_driver_control.syringe.spi_channel          0              # the non-SDcard channel (shared with the thermocouple reader)
+motor_driver_control.syringe.spi_cs_pin           1.30!          #
+motor_driver_control.syringe.spi_frequency        125000         #
+motor_driver_control.syringe.reg                  0F20,017B,0032,0100,0510,0A02,0000    # this uses 1/16 stepping
 
 # Second extruder module configuration
 #extruder.hotend2.enable                          true             # Whether to activate the extruder module at all. All configuration is ignored if false
