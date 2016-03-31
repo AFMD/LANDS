@@ -10,5 +10,5 @@ Folders here correspond to commit hashes for https://github.com/Smoothieware/Smo
 To bring a new *.orig (say from 7edfb34) up-to-date with my changes (say from fc8cfc6):
 ```
 cd 7edfb34
-HASH_DIR=fc8cfc6 patch -uN -o config.txt config.orig  ../$HASH_DIR/config.diff
+patch -uN -o config.txt config.orig  ../fc8cfc6/config.diff
 ```

@@ -87,3 +87,12 @@ CS DISABLED
 ```
 To read the status register send:`{0b11110000 0b00000000]`
 To reset all faults send: `[0b01110000 0b00000000]`
+
+So then the values stored in the registers are (found by &ing the above responses with 0x7ffff):  
+Register 0x00: 0x0F11  
+Register 0x01: 0x017B  
+Register 0x02: 0x0032  
+Register 0x03: 0x0100  
+Register 0x04: 0x0510  
+Register 0x05: 0x0A02  
+Register 0x06: 0x0000
