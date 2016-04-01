@@ -27,7 +27,7 @@ junction_deviation                           0.05             # Similar to the o
 #minimum_planner_speed                       0.0              # sets the minimum planner speed in mm/sec
 
 # Stepper module configuration
-microseconds_per_step_pulse                  1                # Duration of step pulses to stepper drivers, in microseconds
+microseconds_per_step_pulse                  3                # Duration of step pulses to stepper drivers, in microseconds
 base_stepping_frequency                      100000           # Base frequency for stepping
 
 # Cartesian axis speed limits
@@ -116,7 +116,7 @@ motor_driver_control.syringe.current              3000           # in mA
 motor_driver_control.syringe.spi_channel          0              # the non-SDcard channel (shared with the thermocouple reader)
 motor_driver_control.syringe.spi_cs_pin           1.30!          #
 motor_driver_control.syringe.spi_frequency        125000         #
-motor_driver_control.syringe.reg                  0F20,017B,0032,0100,0510,0A02,0000    # this uses 1/16 stepping
+motor_driver_control.syringe.reg                  0E21,01B8,0032,0100,0510,0A02,0000    # this uses 1/16 stepping
 
 # Second extruder module configuration
 #extruder.hotend2.enable                          true             # Whether to activate the extruder module at all. All configuration is ignored if false
