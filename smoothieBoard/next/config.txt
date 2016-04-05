@@ -187,7 +187,7 @@ temperature_control.hotend.designator        T                #
 
 temperature_control.bed.enable               true             #
 #temperature_control.bed.thermistor_pin       0.24             #
-temperature_control.bed.heater_pin           2.4              #
+temperature_control.bed.heater_pin           2.6              #
 #temperature_control.bed.thermistor           Honeywell100K    # see http://smoothieware.org/temperaturecontrol#toc5
 #temperature_control.bed.beta                3974             # or set the beta value
 temperature_control.bed.sensor               max31855         #
