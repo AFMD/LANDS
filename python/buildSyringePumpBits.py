@@ -49,3 +49,20 @@ rodGuide = extrude(pump2D["rodGuide"],0,0,rodGuideThickness)
 rodGuide = difference(rodGuide, nema23Holes + rodHoles)
 solid2STEP(rodGuide, "../output/rodGuide.step")
 solid2STL(rodGuide, "../output/rodGuide.stl")
+
+# build moving plate
+movingPlateThickness = 24
+movingPlate = extrude(pump2D["movingPlate"],0,0,movingPlateThickness)
+
+nutMounts = [Part.Face(Part.Wire(edge)) for edge in pump2D["nutMounts"]] # facify the edges from the DXF
+nutMounts = extrude(nutMounts,0,0,standoffHeight)
+
+leadscrewHole = [Part.Face(Part.Wire(edge)) for edge in pump2D["leadscrewHole"]] # facify the edges from the DXF
+leadscrewHole = extrude(leadscrewHole,0,0,standoffHeight)
+
+slideBearings = [Part.Face(Part.Wire(edge)) for edge in pump2D["slideBearings"]] # facify the edges from the DXF
+slideBearings = extrude(slideBearings,0,0,standoffHeight)
+
+movingPlate = difference(movingPlate, nutMounts + leadscrewHole + slideBearings)
+solid2STEP(movingPlate, "../output/movingPlate.step")
+solid2STL(movingPlate, "../output/movingPlate.stl")
