@@ -11,7 +11,7 @@ mm_per_arc_segment                           0.5              # Arcs are cut int
 # Arm solution configuration : Cartesian robot. Translates mm positions into stepper positions
 alpha_steps_per_mm                           80               # Steps per mm for alpha stepper
 beta_steps_per_mm                            80               # Steps per mm for beta stepper
-gamma_steps_per_mm                           1600             # Steps per mm for gamma stepper
+gamma_steps_per_mm                           2600             # Steps per mm for gamma stepper
 
 # Planner module configuration : Look-ahead and acceleration configuration
 planner_queue_size                           32               # DO NOT CHANGE THIS UNLESS YOU KNOW EXACTLY WHAT YOU ARE DOING
@@ -63,7 +63,7 @@ second_usb_serial_enable                     false            # This enables a s
 #play_led_disable                            true             # disable the play led
 
 # Kill button (used to be called pause) maybe assigned to a different pin, set to the onboard pin by default
-kill_button_enable                           false            # set to true to enable a kill button
+kill_button_enable                           true            # set to true to enable a kill button
 kill_button_pin                              2.12             # kill button pin. default is same as pause button 2.12 (2.11 is another good choice)
 
 #msd_disable                                 false            # disable the MSD (USB SDCARD) when set to true (needs special binary)
@@ -75,10 +75,13 @@ currentcontrol_module_enable                 true             #
 
 ## Extruder module configuration
 extruder.hotend.enable                          true             # Whether to activate the extruder module at all. All configuration is ignored if false
-extruder.hotend.steps_per_mm                    140              # Steps per mm for extruder stepper
+extruder.hotend.steps_per_mm                    1600             # Steps per mm for extruder stepper = 1/2 rev/mm screw * 16 microstepping * 360/1.8 steps/rev 
 extruder.hotend.default_feed_rate               600              # Default rate ( mm/minute ) for moves where only the extruder moves
 extruder.hotend.acceleration                    500              # Acceleration for the stepper motor mm/sec²
 extruder.hotend.max_speed                       50               # mm/s
+#extruder.hotend.filament_diameter              22		 # for 22mm diameter syringe, don't set this, instead use gcode M92 to adjust steps_per_mm to be
+								 # steps_per_ml = 1000*steps_per_mm/((D/2)^2*pi) = 6.4e6/(pi*D^2), where D is syringe diameter in mm
+								 # = 4209 steps/mL for a 22mm diameter syringe
 
 extruder.hotend.step_pin                        2.8              # Pin for extruder step signal
 extruder.hotend.dir_pin                         2.13             # Pin for extruder dir signal
@@ -194,6 +197,9 @@ temperature_control.bed.sensor               max31855         #
 temperature_control.bed.chip_select_pin      0.16             #
 temperature_control.bed.spi_channel          0                #
 
+#temperature_control.bed.max_temp	     inf
+#temperature_control.bed.min_temp	     -inf              
+
 temperature_control.bed.pwm_frequency        3                #
 temperature_control.bed.p_factor             30.2             #
 temperature_control.bed.i_factor             0.519            #
@@ -252,7 +258,8 @@ gamma_min_endstop                            nc               #
 gamma_max_endstop                            1.29^!           #
 gamma_homing_direction                       home_to_max      #
 gamma_min                                    0                #
-gamma_max                                    200              #
+gamma_max                                    160              # this means Z is now in nozzle position in mm above the plate
+							      # WARNING: the nozzle geometry is such that it will crash at Z=~10mm, not Z=0!
 
 # optional order in which axis will home, default is they all home at the same time,
 # if this is set it will force each axis to home one at a time in the specified order
