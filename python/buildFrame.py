@@ -7,36 +7,24 @@ import FreeCAD
 
 from ezFreeCAD import *
 
-# 2d first, union then extrude to 3d --> 2d section:
-myrect = rectangle(4,3)
-myrect = translate(myrect,0,2,0)
-myrect2 = rectangle(1,10)
-circ=circle(4)
-circ2=circle(2)
+# all distances in mm
+majorWidth = 390
+footHeight = 60
+littleFootWidth = 40
+littleFootHeight = 20
+roundsR = 10 # radius used for most rounds
+plateThickness = 10.4
 
-aShape = union(myrect,myrect2)
-banjoOuter2D = union(aShape,circ)
-banjo2D = difference(banjoOuter2D, circ2)
+def makeScrewUnion(holeLength=10.4,tHeight=10.4,tDepth=12.2,holeD=4.2,nutD=7,nutL=3.1,extraScrew=4):
+    screwGrove = translate(cube(holeD,tDepth,tHeight),-holeD/2,0,0)
+    nutPocket = translate(cube(nutD,nutL,tHeight),-nutD/2,extraScrew,0)
+    tee = translate(union(screwGrove,nutPocket),0,-tDepth,0)
+    screwUnion = union(translate(rotate(cylinder(holeD/2, holeLength),-90,0,0),0,0,tHeight/2),tee)
+    return screwUnion
 
-thickness = 1;
-banjo3D = extrude(banjo2D,0,0,thickness)
-banjoSection = section(banjo3D)
+foot = extrude(roundedRectangle(majorWidth, footHeight,r=[0,0,roundsR,roundsR]),0,0,plateThickness)
+footGap = translate(extrude(roundedRectangle(majorWidth-littleFootWidth*2, littleFootHeight,r=roundsR,ear=True),0,0,plateThickness),littleFootWidth,0,0)
+foot = difference(foot,footGap)
 
-save2DXF(banjoSection,"banjo.dxf")
-solid2STEP(banjo3D, "banjo.step")
-
-# 2d first --> extrude to 3d then union --> 2d section:
-# this gives better results. boolean operations work better on 3d things
-myrect = extrude(rectangle(4,3),0,0,thickness)
-myrect = translate(myrect,0,2,0)
-myrect2 = extrude(rectangle(1,10),0,0,thickness)
-circ=extrude(circle(4),0,0,thickness)
-circ2=extrude(circle(2),0,0,thickness)
-
-aShape = union(myrect,myrect2)
-banjoOuter2D = union(aShape,circ)
-banjo3D = difference(banjoOuter2D, circ2)
-banjoSection = section(banjo3D)
-
-save2DXF(banjoSection,"banjo2.dxf")
-solid2STEP(banjo3D, "banjo2.step")
+solid2STEP(foot, "foot.step")
+save2DXF(foot,"foot.dxf")
