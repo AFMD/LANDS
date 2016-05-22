@@ -1,4 +1,10 @@
+#!/usr/bin/env python2
 from __future__ import division
+
+import sys
+sys.path.append('/usr/lib/freecad') # path to your FreeCAD.so or FreeCAD.dll file
+import FreeCAD
+
 from ezFreeCAD import *
 
 # 2d first, union then extrude to 3d --> 2d section:
