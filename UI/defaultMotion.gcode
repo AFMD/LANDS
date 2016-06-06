@@ -37,9 +37,13 @@ G4 S10; do nothing for 10 seconds
 ;TODO: turn heater on here
 
 ;G1 E40 F2; start infusion: 40ml at 2 ml/min
-M1910.2 E40. F2; start infusion: 40ml at 2 ml/m
+M1910.2 E40.0 F2; start infusion: 40ml at 2 ml/m
 
 ;TODO: stage movements here
+
+M1910.1 E0; stop infusion
+
+;TODO: turn heater off here
 
 M18; motors off
 M29; end logging
