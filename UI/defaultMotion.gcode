@@ -37,8 +37,9 @@ G4 S10; do nothing for 10 seconds
 ;TODO: turn heater on here
 
 ;G1 E40 F2; start infusion: 40ml at 2 ml/min
-;M1910.2 E40.0 F2.5; start infusion: 40ml at 2.5 ml/m
-M1910.2 E5.0 F5.0; start infusion: 5ml at 5 ml/m
+;M1910.2 E40.0 F0.04167; start infusion: 40ml at 2.5 ml/m
+M1910.2 E5.0 F0.0833; start infusion: 5ml at 5 ml/m (=5/60)
+;M1910.2 E5.0 F1.0; start infusion: 1ml at 1 ml/s
 
 G4 S70; do nothing for 70 seconds (testing)
 ;TODO: stage movements here
