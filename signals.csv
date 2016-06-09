@@ -1,8 +1,8 @@
 name,terminal block number,wire color,bundle cable,control termination
-K-TC+,none,yellow,TC,max38155 yellow+
-K-TC-,none,red,TC,max38155 red-
-heater-,11,black,black silicone,24V supply V-
-heater+,22,red,red silicone,DC relay -1
+K-TC+,none,yellow,TC,max38155:yellow+
+K-TC-,none,red,TC,max38155:red-
+heater-,11,black,black silicone,24V supply:V-
+heater+,22,red,red silicone,DC relay:-1
 xmin_limit_A,2,brown,12_core,smoothie:xmin_limit_A
 xmin_limit_B,1,blue,12_core,smoothie:xmin_limit_B
 ymin_limit_A,12,purple,12_core,smoothie:ymin_limit_A
