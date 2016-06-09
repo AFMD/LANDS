@@ -1,0 +1,5 @@
+name,terminal block number,wire color,bundle cable,control termination
+K-TC+,none,yellow,TC,max38155 yellow+
+K-TC-,none,red,TC,max38155 red-
+heater-,11,black,black silicone,24V supply V-
+heater+,22,red,red silicone,DC relay -1
