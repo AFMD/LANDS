@@ -3,3 +3,34 @@ K-TC+,none,yellow,TC,max38155 yellow+
 K-TC-,none,red,TC,max38155 red-
 heater-,11,black,black silicone,24V supply V-
 heater+,22,red,red silicone,DC relay -1
+xmin_limit_A,2,brown,12_core,smoothie:xmin_limit_A
+xmin_limit_B,1,blue,12_core,smoothie:xmin_limit_B
+ymin_limit_A,12,purple,12_core,smoothie:ymin_limit_A
+ymin_limit_B,13,yellow,12_core,smoothie:ymin_limit_B
+zmax_limit_A,24,pink,12_core,smoothie:zmax_limit_A
+zmax_limit_B,23,green,12_core,smoothie:zmax_limit_B
+unused,25,gray,12_core,none
+play_payse_button_A,32,orange,12_core,smoothie:JP23-4
+play_payse_button_B,33,black,12_core,smoothie:JP23-2
+play_payse_button_LED-,31,white,12_core,smoothie:JP23-1
+play_payse_button_LED+,30,red,12_core,smoothie:JP23-3
+syringe_B-,29,black,syringe stepper,DRV8711-EVM-B-
+syringe_B+,28,green,syringe stepper,DRV8711-EVM-B+
+syringe_A-,27,white,syringe stepper,DRV8711-EVM-A-
+syringe_A+,26,red,syringe stepper,DRV8711-EVM-A+
+z_right_B-,10,black,z right stepper,smoothie:M4-1
+z_right_B+,9,green,z right stepper,smoothie:M4-2
+z_right_A-,8,white,z right stepper,smoothie:M4-3
+z_right_A+,7,red,z right stepper,smoothie:M4-4
+z_left_B-,17,black,z left stepper,smoothie:M3-1
+z_left_B+,16,green,z left stepper,smoothie:M3-2
+z_left_A-,15,white,z left stepper,smoothie:M3-3
+z_left_A+,14,red,z left stepper,smoothie:M3-4
+y_B-,21,black,y stepper,smoothie:M2-1
+y_B+,20,green,y stepper,smoothie:M2-2
+y_A-,19,white,y stepper,smoothie:M2-3
+y_A+,18,red,y stepper,smoothie:M2-4
+x_B-,6,black,x stepper,smoothie:M1-1
+x_B+,5,green,x stepper,smoothie:M1-2
+x_A-,4,white,x stepper,smoothie:M1-3
+x_A+,3,red,x stepper,smoothie:M1-4
