@@ -34,7 +34,7 @@ G4 S10; do nothing for 10 seconds
 G1 Z120 F4000; move the nozzle to 120mm above plate at 4000 mm/sec
 G4 S10; do nothing for 10 seconds
 
-;TODO: turn heater on here
+M190 S100; set bed temperature to 100 deg c and then wait for it
 
 ;G1 E40 F2; start infusion: 40ml at 2 ml/min
 ;M1910.2 E40.0 F0.04167; start infusion: 40ml at 2.5 ml/m
@@ -42,7 +42,23 @@ M1910.2 E5.0 F0.0833; start infusion: 5ml at 5 ml/m (=5/60)
 ;M1910.2 E5.0 F1.0; start infusion: 5ml at 1 ml/s
 
 G4 S70; do nothing for 70 seconds (testing)
-;TODO: stage movements here
+;stage movements now
+G1 Y10 F200 ;move y to 10 at 200 mm/sec
+G1 Y200 ;move y to 200 (at 200 mm/sec)
+G1 Y10
+G1 Y200
+G1 Y10
+G1 Y200
+G1 Y10
+G1 Y200
+G1 Y10
+G1 Y200
+G1 Y10
+G1 Y200
+G1 Y10
+G1 Y200
+G1 Y10
+G1 Y200
 
 M1910.1 E0; stop infusion
 
@@ -50,8 +66,7 @@ M1910.2 E-5.0 F1.0; withdraw: 5ml at 1 ml/s
 
 G4 S6; do nothing for 6 seconds (testing)
 
-;TODO: turn heater off here
+M140 S0; set the bed temperature to 0 deg C
 
 M18; motors off
 M29; end logging
-
