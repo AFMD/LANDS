@@ -1,5 +1,7 @@
 M28 mycodes.gcode; begin logging
 
+M999; enable all the things (in case the halt button was pressed)
+
 ;program the syringe pump driver registers:
 ;1: CTRL Register
 ;2: TORQUE Register
@@ -71,6 +73,7 @@ G4 S6; do nothing for 6 seconds (testing)
 M140 S0; set the bed temperature to 0 deg C
 
 M18; motors off
+M112; disable all the things
 M29; end logging
 
 ;select the file:
