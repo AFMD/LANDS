@@ -43,24 +43,26 @@ M1910.2 E5.0 F0.0833; start infusion: 5ml at 5 ml/m (=5/60)
 
 G4 S70; do nothing for 70 seconds (testing)
 ;stage movements now
-G1 Y10 F200 ;move y to 10 at 200 mm/sec
-G1 Y200 ;move y to 200 (at 200 mm/sec)
-G1 Y10
-G1 Y200
-G1 Y10
-G1 Y200
-G1 Y10
-G1 Y200
-G1 Y10
-G1 Y200
-G1 Y10
-G1 Y200
-G1 Y10
-G1 Y200
-G1 Y10
-G1 Y200
+G1 X10 Y10 F200 ;move x = 10, y = 10 at 200 mm/sec
+G1 X11 Y200 ;move x=11,y=200 (at 200 mm/sec)
+G1 X12 Y10
+G1 X13 Y200
+G1 X14 Y10
+G1 X15 Y200
+G1 X16 Y10
+G1 X17 Y200
+G1 X18 Y10
+G1 X19 Y200
+G1 X20 Y10
+G1 X21 Y200
+G1 X22 Y10
+G1 X23 Y200
+G1 X24 Y10
+G1 X25 Y200
 
 M1910.1 E0; stop infusion
+
+G1 X80 Y210 F4000; send plate to loading position at 4000 mm/sec
 
 M1910.2 E-5.0 F1.0; withdraw: 5ml at 1 ml/s
 
