@@ -72,3 +72,9 @@ M140 S0; set the bed temperature to 0 deg C
 
 M18; motors off
 M29; end logging
+
+;select the file:
+;M23 mycodes.gcode
+
+;run it:
+;M24
