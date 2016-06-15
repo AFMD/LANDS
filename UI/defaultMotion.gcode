@@ -43,7 +43,6 @@ M190 S100; set bed temperature to 100 deg c and then wait for it
 M1910.2 E5.0 F0.0833; start infusion: 5ml at 5 ml/m (=5/60)
 ;M1910.2 E5.0 F1.0; start infusion: 5ml at 1 ml/s
 
-G4 S70; do nothing for 70 seconds (testing)
 ;stage movements now
 G1 X10 Y10 F12000 ;move x = 10, y = 10 at 200 mm/sec
 G1 X11 Y200 ;move x=11,y=200 (at 200 mm/sec)
@@ -61,6 +60,8 @@ G1 X22 Y10
 G1 X23 Y200
 G1 X24 Y10
 G1 X25 Y200
+
+G4 S70; do nothing for 70 seconds (testing)
 
 M1910.1 E0; stop infusion
 
