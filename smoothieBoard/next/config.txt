@@ -68,8 +68,8 @@ second_usb_serial_enable                     false            # This enables a s
 
 pause_button_enable                          true
 pause_button_pin                             2.12
-pause_led_pin                                1.23
-play_led_pin                                 1.23
+pause_led_pin                                2.7              # big mosfet Q7
+play_led_pin                                 2.7              # big mosfet Q7
 
 #msd_disable                                 false            # disable the MSD (USB SDCARD) when set to true (needs special binary)
 #dfu_enable                                  false            # for linux developers, set to true to enable DFU
