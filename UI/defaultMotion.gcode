@@ -27,6 +27,7 @@ G28 F6000; home XYZ at a rate of 100mm/sec
 G90; absolute mode
 
 M92 E4209; sets extruder to steps per mL for a D=22mm syringe
+;TODO recalibrate this, it gives flowrates that are too low
 
 G1 X80 Y210 F12000; send plate to loading position at 200 mm/sec
 
@@ -37,7 +38,6 @@ M190 S100; set bed temperature to 100 deg c and then wait for it
 
 ;M1910.2 E4 F0.0666; start infusion: 4ml at 4 ml/m (=4/60)
 M1910.2 E40 F0.0666; start infusion: 40ml at 4 ml/m (=4/60)
-;TODO recalibrate this rate, it's too low
 
 ;stage movements now
 G1 X50 Y10 F12000 ;move x = 50, y = 10 at 200 mm/sec
