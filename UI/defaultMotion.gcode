@@ -33,10 +33,10 @@ G1 X80 Y210 F12000; send plate to loading position at 200 mm/sec
 G1 Z62 F6000; move the nozzle to 72mm above plate at 100 mm/sec
 ;TODO this needs calibration 62 is actually 72
 
-;M190 S100; set bed temperature to 100 deg c and then wait for it
+M190 S100; set bed temperature to 100 deg c and then wait for it
 
-M1910.2 E4 F0.0666; start infusion: 4ml at 4 ml/m (=4/60)
-;M1910.2 E40 F0.0666; start infusion: 40ml at 4 ml/m (=4/60)
+;M1910.2 E4 F0.0666; start infusion: 4ml at 4 ml/m (=4/60)
+M1910.2 E40 F0.0666; start infusion: 40ml at 4 ml/m (=4/60)
 
 ;stage movements now
 G1 X50 Y10 F12000 ;move x = 50, y = 10 at 200 mm/sec
@@ -645,16 +645,16 @@ G1 X53 Y200
 G1 X52 Y10
 G1 X51 Y200 ; pass number 6
 
-G1 X80 Y100; send plate to roughgly the middle (testing)
-G4 S70; do nothing for 70 seconds (testing)
+;G1 X80 Y100; send plate to roughgly the middle (testing)
+;G4 S70; do nothing for 70 seconds (testing)
 
 M1910.1 E0; stop infusion
 
 G1 X80 Y210 F6000; send plate to loading position at 100 mm/sec
 
-M1910.2 E-5.0 F1.0; withdraw: 5ml at 1 ml/s
+M1910.2 E-40.0 F1.0; withdraw: 40ml at 1 ml/s
 
-G4 S6; do nothing for 6 seconds (testing)
+G4 S55; do nothing for 55 seconds (testing)
 M1910.1 E0; stop infusion
 
 ;M140 S0; set the bed temperature to 0 deg C
