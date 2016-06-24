@@ -1,5 +1,7 @@
 M28 mycodes.gcode; begin logging
 
+
+
 M999; enable all the things (in case the halt button was pressed)
 
 ;program the syringe pump driver registers:
@@ -154,7 +156,11 @@ M1910.1 E0; stop infusion
 M18; motors off
 M112; disable all the things
 
+
+
 M29; end logging
+
+
 
 ;select the file:
 ;M23 mycodes.gcode
