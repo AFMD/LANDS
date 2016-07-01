@@ -12,15 +12,18 @@ M999; enable all the things (in case the halt button was pressed)
 ;5: DECAY Register
 ;6: STALL Register
 ;7: DRIVE Register
-M911.2 S R1 V3616 ; disable now
+M911.2 S R1 V3616 ; disable now (1/16 microstepping)
+;M911.2 S R1 V3600 ; disable now (1/4 microstepping)
 M911.2 S R2 V440
 M911.2 S R3 V50
 M911.2 S R4 V256
 M911.2 S R5 V1296
 M911.2 S R6 V2592
 M911.2 S R7 V0
-M911.2 S R1 V3617 ; enable now
+M911.2 S R1 V3617 ; enable now (1/16 microstepping)
+;M911.2 S R1 V3601 ; enable now (1/4 microstepping)
 ; for 1/16 stepping: 0E21,01B8,0032,0100,0510,0A02,0000
+; for 1/4 stepping: 0E11,01B8,0032,0100,0510,0A02,0000
 
 M17; motors on
 G28 F6000; home XYZ at a rate of 100mm/sec
@@ -29,9 +32,11 @@ G90; absolute mode
 ; hamilton gastight 1025 inner diameter = 23.0mm = 2.3cm
 ; syringe pump lead screw = 2mm/rotation = 0.2cm/rotation
 ; stepper motor = 200 steps/rotation
-; then steps per mL for a D22mm syringe = 1/(pi*(2.3/2)^2)*1/0.2*200 = 241 steps/mL
+; driver board microstepping = 1/16 steps/pulse
+; then steps per mL for a D23mm syringe = 1/(pi*(2.3/2)^2)*1/0.2*200*16 = 3851 pulses/mL
+; then steps per mL for a D22mm syringe = 1/(pi*(2.2/2)^2)*1/0.2*200*16 = 4209 pulses/mL
 
-M92 E4209; sets extruder to steps per mL for a D=22mm syringe
+M92 3851; sets extruder pulses per mL for a D=23mm syringe (hamilton gastight 1025)
 ;TODO recalibrate this, it gives flowrates that are too low
 
 G1 X80 Y210 F12000; send plate to loading position at 200 mm/sec
