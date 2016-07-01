@@ -36,7 +36,7 @@ G90; absolute mode
 ; then steps per mL for a D23mm syringe = 1/(pi*(2.3/2)^2)*1/0.2*200*16 = 3851 pulses/mL
 ; then steps per mL for a D22mm syringe = 1/(pi*(2.2/2)^2)*1/0.2*200*16 = 4209 pulses/mL
 
-M92 3851; sets extruder pulses per mL for a D=23mm syringe (hamilton gastight 1025)
+M92 E3851; sets extruder pulses per mL for a D=23mm syringe (hamilton gastight 1025)
 ;TODO recalibrate this, it gives flowrates that are too low
 
 G1 X80 Y210 F12000; send plate to loading position at 200 mm/sec
