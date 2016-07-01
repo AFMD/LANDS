@@ -26,6 +26,11 @@ M17; motors on
 G28 F6000; home XYZ at a rate of 100mm/sec
 G90; absolute mode
 
+; hamilton gastight 1025 inner diameter = 23.0mm = 2.3cm
+; syringe pump lead screw = 2mm/rotation = 0.2cm/rotation
+; stepper motor = 200 steps/rotation
+; then steps per mL for a D22mm syringe = 1/(pi*(2.3/2)^2)*1/0.2*200 = 241 steps/mL
+
 M92 E4209; sets extruder to steps per mL for a D=22mm syringe
 ;TODO recalibrate this, it gives flowrates that are too low
 
@@ -653,10 +658,10 @@ M1910.1 E0; stop infusion
 
 G1 X80 Y210 F6000; send plate to loading position at 100 mm/sec
 
-M1910.2 E-40.0 F1.0; withdraw: 40ml at 1 ml/s
+;M1910.2 E-40.0 F1.0; withdraw: 40ml at 1 ml/s
 
-G4 S55; do nothing for 55 seconds (testing)
-M1910.1 E0; stop infusion
+;G4 S55; do nothing for 55 seconds (testing)
+;M1910.1 E0; stop infusion
 
 ;M140 S0; set the bed temperature to 0 deg C
 
