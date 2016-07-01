@@ -27,3 +27,6 @@ make all
 Now the firmware bin is here: ../LPC1768/main.bin  
 Rename that to firmware.bin and put it on the root of the smoothieboard's sd card and reboot it to flash the new firmware.  
 There's an incompatibility with the very latest GCC here, for now downgrade arm-none-eabi-gcc (6.1.1-1 => 5.3.0-1) and arm-none-eabi-newlib (2.4.0-2 => 2.4.0-1) so that this builds
+
+# Next folder
+The next folder contains firmware that includes mods to smoothieware that I've made myself. At present it's built from https://github.com/greyltc/Smoothieware/commit/3ddff27da4c153394d1e701040bc16d3429b57d7
