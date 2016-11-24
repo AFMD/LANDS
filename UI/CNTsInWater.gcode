@@ -41,13 +41,17 @@ M92 E3851; sets extruder pulses per mL for a D=23mm syringe (hamilton gastight 1
 
 G1 X80 Y210 F12000; send plate to loading position at 200 mm/sec
 
-G1 Z62 F6000; move the nozzle to 72mm above plate at 100 mm/sec
+G1 Z90 F6000; move the nozzle to XXmm above plate at 100 mm/sec
+;G1 Z62 F6000; move the nozzle to 72mm above plate at 100 mm/sec
 ;TODO this needs calibration 62 is actually 72
 
 M190 S100; set bed temperature to 100 deg c and then wait for it
 
+G4 S30; do nothing for 30 seconds (allow thermal)
+
 ;M1910.2 E4 F0.0666; start infusion: 4ml at 4 ml/m (=4/60)
-M1910.2 E40 F0.0666; start infusion: 40ml at 4 ml/m (=4/60)
+;M1910.2 E40 F0.0333; start infusion: 40ml at 2 ml/m (=2/60)
+M1910.2 E40 F0.0167; start infusion: 40ml at 1 ml/m (=1/60)
 
 ;stage movements now
 G1 X50 Y10 F12000 ;move x = 50, y = 10 at 200 mm/sec
@@ -661,14 +665,14 @@ G1 X51 Y200 ; pass number 6
 
 M1910.1 E0; stop infusion
 
-G1 X80 Y210 F6000; send plate to loading position at 100 mm/sec
+G1 X10 Y10 F6000; send plate to safe position at 100 mm/sec
 
 ;M1910.2 E-40.0 F1.0; withdraw: 40ml at 1 ml/s
 
 ;G4 S55; do nothing for 55 seconds (testing)
 ;M1910.1 E0; stop infusion
 
-;M140 S0; set the bed temperature to 0 deg C
+M140 S0; set the bed temperature to 0 deg C
 
 M18; motors off
 M112; disable all the things
