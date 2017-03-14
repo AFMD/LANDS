@@ -41,6 +41,7 @@ M92 E1917; sets extruder pulses per mL for a D=32.6mm syringe (hamilton gastight
 ;M92 E3650; sets extruder pulses per mL for the free plastic syringes
 
 G1 X80 Y210 F12000; send plate to loading position at 200 mm/sec
+;G1 X10 Y210 F12000; send plate to safe nozzle position at 200 mm/sec
 
 ;G1 Z90 F6000; move the nozzle to XXmm above plate at 100 mm/sec
 G1 Z62 F6000; move the nozzle to 72mm above plate at 100 mm/sec
