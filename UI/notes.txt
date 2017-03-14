@@ -1,0 +1,21 @@
+Need buttons for:
+infustion start
+infustion stop
+
+motors enable
+motors disable
+
+kill all
+
+
+spray motion start
+motion stop
+
+enable system (nothing enabled until this is pressed)
+home system (nothing enabled until this is pressed)
+go to loading spot
+go to safe spot
+
+
+hotplate on
+hotplate off
