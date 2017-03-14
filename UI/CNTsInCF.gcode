@@ -45,7 +45,7 @@ G1 X80 Y210 F12000; send plate to loading position at 200 mm/sec
 
 ;G1 Z90 F6000; move the nozzle to XXmm above plate at 100 mm/sec
 G1 Z62 F6000; move the nozzle to 72mm above plate at 100 mm/sec
-;G1 Z60 F6000; markus trial height
+;G1 Z56 F6000; markus trial height
 ;TODO this needs calibration 62 is actually 72
 
 M190 S100; set bed temperature to 100 deg c and then wait for it
