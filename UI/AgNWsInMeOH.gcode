@@ -36,22 +36,26 @@ G90; absolute mode
 ; then steps per mL for a D23mm syringe = 1/(pi*(2.3/2)^2)*1/0.2*200*16 = 3851 pulses/mL
 ; then steps per mL for a D22mm syringe = 1/(pi*(2.2/2)^2)*1/0.2*200*16 = 4209 pulses/mL
 
-M92 E3851; sets extruder pulses per mL for a D=23mm syringe (hamilton gastight 1025)
-;TODO recalibrate this, it gives flowrates that are too low
+;M92 E3851; sets extruder pulses per mL for a D=23mm syringe (hamilton gastight 1025)
+M92 E1917; sets extruder pulses per mL for a D=32.6mm syringe (hamilton gastight 1050 aka 85020)
+;M92 E3650; sets extruder pulses per mL for the free plastic syringes
 
 G1 X80 Y210 F12000; send plate to loading position at 200 mm/sec
+;G1 X10 Y210 F12000; send plate to safe nozzle position at 200 mm/sec
 
-G1 Z90 F6000; move the nozzle to XXmm above plate at 100 mm/sec
-;G1 Z62 F6000; move the nozzle to 72mm above plate at 100 mm/sec
-;TODO this needs calibration 62 is actually 72
+;G1 Z90 F6000; move the nozzle to XXmm above plate at 100 mm/sec
+G1 Z49 F6000; move the nozzle to spray height at 100 mm/sec
+;G1 Z52 F6000; markus trial height <-- gave a pretty great looking film
+;TODO this needs calibration 62 is actually 72mm above plate
 
 M190 S100; set bed temperature to 100 deg c and then wait for it
 
 G4 S30; do nothing for 30 seconds (allow thermal)
 
-;M1910.2 E4 F0.0666; start infusion: 4ml at 4 ml/m (=4/60)
-;M1910.2 E40 F0.0333; start infusion: 40ml at 2 ml/m (=2/60)
-M1910.2 E40 F0.0167; start infusion: 40ml at 1 ml/m (=1/60)
+;M1910.2 E4 F0.0666; start infusion: 4ml at 4 ml/m (4/60=0.0666666667)
+;M1910.2 E40 F0.0333; start infusion: 40ml at 2 ml/m (2/60=0.03333333333)
+;M1910.2 E40 F0.0167; start infusion: 40ml at 1 ml/m (1/60=0.0166666667)
+M1910.2 E40 F0.06666; start infusion: 40ml at 4 ml/m (4/60=0.0666666667)
 
 ;stage movements now
 G1 X50 Y10 F12000 ;move x = 50, y = 10 at 200 mm/sec
