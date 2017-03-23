@@ -44,7 +44,7 @@ G1 X80 Y210 F12000; send plate to loading position at 200 mm/sec
 ;G1 X10 Y210 F12000; send plate to safe nozzle position at 200 mm/sec
 
 ;G1 Z90 F6000; move the nozzle to XXmm above plate at 100 mm/sec
-G1 Z49 F6000; move the nozzle to spray height at 100 mm/sec
+G1 Z45 F6000; move the nozzle to spray height at 100 mm/sec
 ;G1 Z52 F6000; markus trial height <-- gave a pretty great looking film
 ;TODO this needs calibration 62 is actually 72mm above plate
 
