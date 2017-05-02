@@ -695,3 +695,6 @@ M29; end logging
 
 ;run it:
 ;M24
+
+;M1910.2 E50 F0.06666; start infusion: 40ml at 4 ml/m (4/60=0.0666666667)
+;M1910.1 E0; stop infusion
