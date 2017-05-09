@@ -55,7 +55,7 @@ G4 S30; do nothing for 30 seconds (allow thermal)
 ;M1910.2 E4 F0.0666; start infusion: 4ml at 4 ml/m (4/60=0.0666666667)
 ;M1910.2 E40 F0.0333; start infusion: 40ml at 2 ml/m (2/60=0.03333333333)
 ;M1910.2 E40 F0.0167; start infusion: 40ml at 1 ml/m (1/60=0.0166666667)
-M1910.2 E80 F0.06666; start infusion: 40ml at 4 ml/m (4/60=0.0666666667)
+M1910.2 E80 F0.06666; start infusion: 80ml at 4 ml/m (4/60=0.0666666667)
 
 ;stage movements now
 G1 X50 Y10 F12000 ;move x = 50, y = 10 at 200 mm/sec
@@ -692,3 +692,6 @@ M29; end logging
 
 ;run it:
 ;M24
+
+;M1910.2 E80 F0.06666; start infusion: 80ml at 4 ml/m (4/60=0.0666666667)
+;M1910.1 E0; stop infusion
