@@ -157,9 +157,8 @@ G1 X55 Y200
 G1 X54 Y10
 G1 X53 Y200
 G1 X52 Y10
-G1 X51 Y200 ; pass number 1
-
-G1 X50 Y10
+G1 X51 Y200 ; lap number 1 ends
+G1 X50 Y10 ; lap number 2 starts
 G1 X51 Y200
 G1 X52 Y10
 G1 X53 Y200
@@ -258,9 +257,8 @@ G1 X55 Y200
 G1 X54 Y10
 G1 X53 Y200
 G1 X52 Y10
-G1 X51 Y200 ; pass number 2
-
-G1 X50 Y10
+G1 X51 Y200 ; lap number 2 ends
+G1 X50 Y10 ; lap number 3 starts
 G1 X51 Y200
 G1 X52 Y10
 G1 X53 Y200
@@ -359,9 +357,8 @@ G1 X55 Y200
 G1 X54 Y10
 G1 X53 Y200
 G1 X52 Y10
-G1 X51 Y200 ; pass number 3
-
-G1 X50 Y10
+G1 X51 Y200 ; lap number 3 ends
+G1 X50 Y10 ; lap number 4 starts
 G1 X51 Y200
 G1 X52 Y10
 G1 X53 Y200
@@ -460,9 +457,8 @@ G1 X55 Y200
 G1 X54 Y10
 G1 X53 Y200
 G1 X52 Y10
-G1 X51 Y200 ; pass number 4
-
-G1 X50 Y10
+G1 X51 Y200 ; lap number 4 ends
+G1 X50 Y10; lap number 5 starts
 G1 X51 Y200
 G1 X52 Y10
 G1 X53 Y200
@@ -561,9 +557,8 @@ G1 X55 Y200
 G1 X54 Y10
 G1 X53 Y200
 G1 X52 Y10
-G1 X51 Y200 ; pass number 5
-
-G1 X50 Y10
+G1 X51 Y200 ; lap number 5 ends
+G1 X50 Y10 ; lap number 6 starts
 G1 X51 Y200
 G1 X52 Y10
 G1 X53 Y200
@@ -662,7 +657,7 @@ G1 X55 Y200
 G1 X54 Y10
 G1 X53 Y200
 G1 X52 Y10
-G1 X51 Y200 ; pass number 6
+G1 X51 Y200 ; lap number 6 ends
 
 ;G1 X80 Y100; send plate to roughgly the middle (testing)
 ;G4 S70; do nothing for 70 seconds (testing)
