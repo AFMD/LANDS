@@ -4,7 +4,7 @@ This repository contains the mechanical and electrical design files for a three-
 This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 659667
 
 
-# how to
+# Simple Usage
 ```bash
 git clone https://github.com/AFMD/LANDS
 cd LANDS
