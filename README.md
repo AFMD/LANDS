@@ -1,5 +1,5 @@
 # LANDS
-This repository contains the mechanical and electrical design files for a three-axis spray nozzle positioner with a heated stage and syringe pump which can be dynamically generated to fit user specified dimensions.
+This repository contains the mechanical and electrical design files for a three-axis air-atomizing spray nozzle positioner with a heated stage and syringe pump which can be dynamically generated to fit user specified dimensions.
 
 ![LANDS](media/LANDS.jpg?raw=true)
 
