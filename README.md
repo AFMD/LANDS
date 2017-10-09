@@ -1,8 +1,7 @@
 # LANDS
 This repository contains the mechanical and electrical design files for a three-axis air-atomizing spray nozzle positioner with a heated stage and syringe pump which can be dynamically generated to fit user specified dimensions.
 
-[![LANDS deposition](https://img.youtube.com/vi/Ym8jDw60mU4/0.jpg)](http://www.youtube.com/watch?v=Ym8jDw60mU4)
-![LANDS](media/LANDS.jpg?raw=true)
+[![LANDS deposition](media/spray.gif?raw=true)](http://www.youtube.com/watch?v=Ym8jDw60mU4)
 
 This project has received funding from the European Union’s Horizon 2020 research and innovation program under the Marie Skłodowska-Curie grant agreement No 659667.
 
