@@ -768,11 +768,13 @@ M23 mycodes.gcode
 ;G1 X80 Y100; send plate to roughgly the middle (testing)
 ;G4 S70; do nothing for 70 seconds (testing)
 
-M1910.1 E0; stop infusion
+  M1910.1 E0; stop infusion
+;M1910.2 E80 F0.06666; start infusion: 80ml at 4 ml/m (4/60=0.0666666667)
 
 G1 X10 Y10 F6000; send plate to safe position at 100 mm/sec
 
 ;M1910.2 E-40.0 F1.0; withdraw: 40ml at 1 ml/s
+:M1910.1 E0; stop infusion
 
 ;G4 S55; do nothing for 55 seconds (testing)
 ;M1910.1 E0; stop infusion
