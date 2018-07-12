@@ -29,7 +29,7 @@ solid2STEP(standoff, "../output/nema23Standoff.step")
 solid2STL(standoff, "../output/nema23Standoff.stl")
 
 # build syringe base plate
-basePlateThickness = 8 # mm for now, TODO: update this to 10 and make standoff 2mm less when they get merged
+basePlateThickness = 16 # mm
 thrustBearingRecess = 5
 basePlate = extrude(pump2D["basePlate"],0,0,basePlateThickness)
 
@@ -43,19 +43,23 @@ bearingSeat = [Part.Face(Part.Wire(edge)) for edge in pump2D["bearingSeat"]] # f
 bearingSeat = extrude(bearingSeat,0,0,standoffHeight)
 
 basePlate = difference(basePlate, nema23Holes + rodHoles + thrustGuide + bearingSeat)
+basePlate = translate(basePlate, 0, 0, -basePlateThickness)
 solid2STEP(basePlate, "../output/pumpBasePlate.step")
 solid2STL(basePlate, "../output/pumpBasePlate.stl")
 
-# build syringe rod guide piece
+# build syringe rod guide piece, this goes on the end of the motor and holds the rods
 rodGuideThickness = 10
+rodGuidePosition = standoffHeight + 40  #mm kind of arbitrary, just makes the full model look not smashed
 rodGuide = extrude(pump2D["rodGuide"],0,0,rodGuideThickness)
-
 rodGuide = difference(rodGuide, nema23Holes + rodHoles)
+
+rodGuide = translate(rodGuide, 0, 0, rodGuidePosition)
 solid2STEP(rodGuide, "../output/rodGuide.step")
 solid2STL(rodGuide, "../output/rodGuide.stl")
 
 # build moving plate
 movingPlateThickness = 24
+movingPlatePosition = -basePlateThickness - movingPlateThickness - 100
 movingPlate = extrude(pump2D["movingPlate"],0,0,movingPlateThickness)
 
 nutMounts = [Part.Face(Part.Wire(edge)) for edge in pump2D["nutMounts"]] # facify the edges from the DXF
@@ -68,5 +72,7 @@ slideBearings = [Part.Face(Part.Wire(edge)) for edge in pump2D["slideBearings"]]
 slideBearings = extrude(slideBearings,0,0,standoffHeight)
 
 movingPlate = difference(movingPlate, nutMounts + leadscrewHole + slideBearings)
+
+movingPlate = translate(movingPlate, 0, 0, movingPlatePosition)
 solid2STEP(movingPlate, "../output/movingPlate.step")
 solid2STL(movingPlate, "../output/movingPlate.stl")
