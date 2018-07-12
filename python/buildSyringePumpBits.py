@@ -1,5 +1,9 @@
 #!/usr/bin/env python2
 from __future__ import division
+import sys
+sys.path.append('/usr/lib/freecad/lib') # path to your FreeCAD.so or FreeCAD.dll file
+import FreeCAD
+
 from ezFreeCAD import *
 
 pump2D = loadDXF("../dxf/syringePump.dxf")

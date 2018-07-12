@@ -1,3 +1,0 @@
-[submodule "python/ezFreeCAD"]
-	path = python/ezFreeCAD
-	url = https://github.com/AFMD/python2-ezFreeCAD.git
