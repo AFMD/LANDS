@@ -660,6 +660,7 @@ G1 X53 Y200
 G1 X52 Y10
 G1 X51 Y200 ; lap number 6 ends
 G1 X10 Y210 ; send plate to safe nozzle position
+M26;
 M29; end logging
 ; select the file:
 M23 mycodes.gcode
