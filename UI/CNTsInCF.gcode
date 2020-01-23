@@ -147,7 +147,6 @@ G1 X65 Y200
 G1 X60 Y10
 G1 X55 Y200
 G1 X50 Y10 ; lap number 3 ends
-
 G1 X10 Y210 ; send plate to safe nozzle position
 M26;
 M29; end logging
