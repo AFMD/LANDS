@@ -57,7 +57,7 @@ G4 S30; do nothing for 30 seconds (allow thermal)
 ;M1910.2 E40 F0.0167; start infusion: 40ml at 1 ml/m (1/60=0.0166666667)
 M1910.2 E80 F0.06666; start infusion: 80ml at 4 ml/m (4/60=0.0666666667)
 
-M28 mycodea.gcode; begin logging
+M28 mycodes20.gcode; begin logging
 ;stage movements now
 G1 X50 Y10 F12000 ;move x = 50, y = 10 at 200 mm/sec
 G1 X55 Y200 ;move x=51,y=200 (at 200 mm/sec)
@@ -84,8 +84,9 @@ G1 X10 Y210 ; send plate to safe nozzle position
 M26;
 M29; end logging
 
-M28 mycodes60.gcode; begin logging
+M28 mycodes40.gcode; begin logging
 ;stage movements now
+;mycodes40 adds 40 extra passes
 G1 X50 Y10 F12000 ;lap number 2 starts, move x = 50, y = 10 at 200 mm/sec
 G1 X55 Y200 ;move x=55,y=200 (at 200 mm/sec)
 G1 X60 Y10
@@ -132,54 +133,9 @@ M26;
 M29; end logging
 
 M28 mycodes100.gcode; begin logging
-G1 X50 Y10 F12000 ;lap number 4 starts, move x = 50, y = 10 at 200 mm/sec
-G1 X55 Y200 ;move x=55,y=200 (at 200 mm/sec)
-G1 X60 Y10
-G1 X65 Y200
-G1 X70 Y10
-G1 X75 Y200
-G1 X80 Y10
-G1 X85 Y200
-G1 X90 Y10
-G1 X95 Y200
-G1 X100 Y10
-G1 X95 Y200
-G1 X90 Y10
-G1 X85 Y200
-G1 X80 Y10
-G1 X75 Y200
-G1 X70 Y10
-G1 X65 Y200
-G1 X60 Y10
-G1 X55 Y200
-G1 X50 Y10 ; lap number 4 ends
-G1 X55 Y200 ; lap number 5 starts
-G1 X60 Y10
-G1 X65 Y200
-G1 X70 Y10
-G1 X75 Y200
-G1 X80 Y10
-G1 X85 Y200
-G1 X90 Y10
-G1 X95 Y200
-G1 X100 Y10
-G1 X95 Y200
-G1 X90 Y10
-G1 X85 Y200
-G1 X80 Y10
-G1 X75 Y200
-G1 X70 Y10
-G1 X65 Y200
-G1 X60 Y10
-G1 X55 Y200
-G1 X50 Y10 ; lap number 5 ends
-G1 X10 Y210 ; send plate to safe nozzle position
-M26;
-M29; end logging
-
-M28 mycodes200.gcode; begin logging
 ;stage movements now
-G1 X50 Y10 F12000 ;after 100 initial passes, oneslower pass of 100 steps, move x = 50, y = 10 at 200 mm/sec
+;mycodes100 adds 100 extra passes
+G1 X50 Y10 F12000 ;move x = 50, y = 10 at 200 mm/sec
 G1 X51 Y200 ;move x=11,y=200 (at 200 mm/sec)
 G1 X52 Y10
 G1 X53 Y200
@@ -279,112 +235,6 @@ G1 X54 Y10
 G1 X53 Y200
 G1 X52 Y10
 G1 X51 Y200 ; pass 200 ends
-G1 X10 Y210 ; send plate to safe nozzle position
-M26;
-M29; end logging
-
-M28 mycodes300.gcode; begin logging
-;stage movements now
-G1 X50 Y10 F12000 ;100 extra passes for 300 total, move x = 50, y = 10 at 200 mm/sec
-G1 X51 Y200 ;move x=11,y=200 (at 200 mm/sec)
-G1 X52 Y10
-G1 X53 Y200
-G1 X54 Y10
-G1 X55 Y200
-G1 X56 Y10
-G1 X57 Y200
-G1 X58 Y10
-G1 X59 Y200
-G1 X60 Y10
-G1 X61 Y200
-G1 X62 Y10
-G1 X63 Y200
-G1 X64 Y10
-G1 X65 Y200
-G1 X66 Y10
-G1 X67 Y200
-G1 X68 Y10
-G1 X69 Y200
-G1 X70 Y10
-G1 X71 Y200
-G1 X72 Y10
-G1 X73 Y200
-G1 X74 Y10
-G1 X75 Y200
-G1 X76 Y10
-G1 X77 Y200
-G1 X78 Y10
-G1 X79 Y200
-G1 X80 Y10
-G1 X81 Y200
-G1 X82 Y10
-G1 X83 Y200
-G1 X84 Y10
-G1 X85 Y200
-G1 X86 Y10
-G1 X87 Y200
-G1 X88 Y10
-G1 X89 Y200
-G1 X90 Y10
-G1 X91 Y200
-G1 X92 Y10
-G1 X93 Y200
-G1 X94 Y10
-G1 X95 Y200
-G1 X96 Y10
-G1 X97 Y200
-G1 X98 Y10
-G1 X99 Y200
-G1 X100 Y10
-G1 X99 Y200
-G1 X98 Y10
-G1 X97 Y200
-G1 X96 Y10
-G1 X95 Y200
-G1 X94 Y10
-G1 X93 Y200
-G1 X92 Y10
-G1 X91 Y200
-G1 X90 Y10
-G1 X89 Y200
-G1 X88 Y10
-G1 X87 Y200
-G1 X86 Y10
-G1 X85 Y200
-G1 X84 Y10
-G1 X83 Y200
-G1 X82 Y10
-G1 X81 Y200
-G1 X80 Y10
-G1 X79 Y200
-G1 X78 Y10
-G1 X77 Y200
-G1 X76 Y10
-G1 X75 Y200
-G1 X74 Y10
-G1 X73 Y200
-G1 X72 Y10
-G1 X71 Y200
-G1 X70 Y10
-G1 X69 Y200
-G1 X68 Y10
-G1 X67 Y200
-G1 X66 Y10
-G1 X65 Y200
-G1 X64 Y10
-G1 X63 Y200
-G1 X62 Y10
-G1 X61 Y200
-G1 X60 Y10
-G1 X59 Y200
-G1 X58 Y10
-G1 X57 Y200
-G1 X56 Y10
-G1 X55 Y200
-G1 X54 Y10
-G1 X53 Y200
-G1 X52 Y10
-G1 X51 Y200 ; lap number 1 ends
 G1 X10 Y210 ; send plate to safe nozzle position
 M26;
 M29; end logging
