@@ -57,7 +57,7 @@ G4 S30; do nothing for 30 seconds (allow thermal)
 ;M1910.2 E40 F0.0167; start infusion: 40ml at 1 ml/m (1/60=0.0166666667)
 M1910.2 E80 F0.06666; start infusion: 80ml at 4 ml/m (4/60=0.0666666667)
 
-M28 mycodes20.gcode; begin logging
+M28 mycodea.gcode; begin logging
 ;stage movements now
 G1 X50 Y10 F12000 ;move x = 50, y = 10 at 200 mm/sec
 G1 X55 Y200 ;move x=51,y=200 (at 200 mm/sec)
