@@ -1,4 +1,4 @@
-# LANDS (Large Area Nanoparticle Deposition System)
+# LANDS
 A project by __M. Greyson Christoforo__  
 
 This project has received funding from the European Union’s Horizon 2020 research and innovation program under the Marie Skłodowska-Curie Individual Fellowship grant agreement No 659667.
