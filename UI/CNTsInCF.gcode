@@ -169,6 +169,9 @@ G1 X81 Y200
 G1 X80 Y10
 G1 X10 Y200
 G1 X10 Y210 ; send plate to safe nozzle position
+M105
+M1910.1 E0
+G1 X10 Y210
 
 
 M26;
