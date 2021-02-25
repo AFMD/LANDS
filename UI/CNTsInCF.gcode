@@ -44,7 +44,7 @@ G1 X80 Y210 F12000; send plate to loading position at 200 mm/sec
 ;G1 X10 Y210 F12000; send plate to safe nozzle position at 200 mm/sec
 
 ;G1 Z90 F6000; move the nozzle to XXmm above plate at 100 mm/sec
-G1 Z40 F6000; move the nozzle to spray height at 100 mm/sec
+G1 Z43 F6000; move the nozzle to spray height at 100 mm/sec
 ;G1 Z45 F6000; markus trial height <-- gave a pretty great looking film
 ;TODO this needs calibration 62 is actually 72mm above plate
 
@@ -57,10 +57,14 @@ G4 S30; do nothing for 30 seconds (allow thermal)
 ;M1910.2 E40 F0.0167; start infusion: 40ml at 1 ml/m (1/60=0.0166666667)
 M1910.2 E80 F0.06666; start infusion: 80ml at 4 ml/m (4/60=0.0666666667)
 
-M28 mycodes.gcode; begin logging
-;stage movements now
-G1 X50 Y10 F12000 ;move x = 50, y = 10 at 200 mm/sec
-G1 X51 Y200 ;move x=51,y=200 (at 200 mm/sec)
+
+G1 X45 Y200 F12000
+G1 X46 Y10
+G1 X47 Y200
+G1 X48 Y10
+G1 X49 Y200
+G1 X50 Y10  
+G1 X51 Y200 
 G1 X52 Y10
 G1 X53 Y200
 G1 X54 Y10
@@ -110,6 +114,16 @@ G1 X97 Y200
 G1 X98 Y10
 G1 X99 Y200
 G1 X100 Y10
+G1 X101 Y200
+G1 X102 Y10
+G1 X103 Y200
+G1 X104 Y10
+G1 X105 Y200
+G1 1094 Y10
+G1 X103 Y200
+G1 X102 Y10
+G1 X101 Y200
+G1 X100 Y10
 G1 X99 Y200
 G1 X98 Y10
 G1 X97 Y200
@@ -158,13 +172,17 @@ G1 X55 Y200
 G1 X54 Y10
 G1 X53 Y200
 G1 X52 Y10
-G1 X51 Y200 ; lap number 1 ends
+G1 X51 Y200 
+G1 X50 Y10
+G1 X49 Y200
+G1 X48 Y10
+G1 X47 Y200
+G1 X46 Y10
+G1 X45 Y200
+G1 X10 Y210
+M105
 
-G1 X10 Y210 ; send plate to safe nozzle position
-M26;
-M29; end logging
-; select the file:
-M23 mycodes.gcode
+
 
 
 
