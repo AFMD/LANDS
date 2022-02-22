@@ -1,3 +1,5 @@
+; takes up about 25ml solution for 100p
+
 M999; enable all the things (in case the halt button was pressed)
 
 ;program the syringe pump driver registers:
